@@ -7,13 +7,21 @@
 </head>
 <body>
     <button>hello</button>
+    <button class="js-button">second button</button>
     <script>
-     console.log( document.querySelector('button')); 
+     console.log( document.querySelector('button')
+     .innerHTML); 
+
+     document.querySelector('button')
+     .innerHTML = 'chnaged';
+
+    const buttonElement = document.querySelector( '.js-button');
+    console.log(buttonElement);
         // document.body.innerHTML = 'hello';
         // document.title = 'yeaah';
 
         // console.log(document.body);
-        // console.log( typeof document.body);
+        // console.log( typeof document.body); 
 
         // console.log(document.body.innerHTML);
         // document.body.innerHTML  = '<button>Good job mate!</button>';
