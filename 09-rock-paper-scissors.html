@@ -84,14 +84,14 @@
           score.ties += 1;
         }
 
-        localStorage.setItem('score', JSON.stringify(score));
+        localStorage.setItem('score', JSON.stringify(score)); 
         
         updateScoreElement();
 
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       }
-      function updateScoreElement(params) {
+      function updateScoreElement() {
         document.querySelector('.js-score')
       .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
