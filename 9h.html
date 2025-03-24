@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This is our input box where you can type -->
+    <input placeholder="type something" type="text" class="js-input-button">
+    
+    <!-- This is where the text will appear -->
+    <p></p>
+
+    <script>
+        // Get our input box and paragraph
+        let inputBox = document.querySelector('.js-input-button');
+        let textDisplay = document.querySelector('p');
+
+        // When you type something in the input box
+        inputBox.onkeyup = function() {
+            // Show what you typed in the paragraph below
+            textDisplay.innerHTML = inputBox.value;
+        }
+    </script>
+</body>
+</html>
