@@ -7,10 +7,8 @@
 </head>
 <body>
     <input class="js-input-button" placeholder="cost of order" onkeydown="
-        console.log(event.key);
-        if (event.key === 'Enter') {
-            calculate();
-        }
+        handleCostkeydown(event);
+        
         ">
     <button onclick="
     calculate();
@@ -18,6 +16,11 @@
     <p class="js-output"> </p>
 </body>
 <script>
+    function handleCostkeydown(event) {
+        if (event.key === 'Enter') {
+            calculate();
+        }
+    }
 function calculate() {
 
     let cost =Number(document.querySelector('.js-input-button').value); // input box ke andar ka value ko process kiye
