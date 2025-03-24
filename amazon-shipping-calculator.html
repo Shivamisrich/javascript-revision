@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input class="js-input-button" placeholder="cost of order" onkeydown="
+        console.log(event.key);
+        if (event.key === 'Enter') {
+            calculate();
+        }
+        ">
+    <button onclick="
+    calculate();
+    "> Calculate </button>
+    <p class="js-output"> </p>
+</body>
+<script>
+function calculate() {
+
+    let cost =Number(document.querySelector('.js-input-button').value); // input box ke andar ka value ko process kiye
+    if (cost >= 50) { // compare kiye 
+        document.querySelector('.js-output').innerHTML  = cost;  //now paragraph me update kar diye output
+    }
+    else if (cost <= 50 ) {
+        document.querySelector('.js-output').innerHTML  = cost + 10;
+    }
+} 
+
+</script>
+</html>
