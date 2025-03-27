@@ -1,0 +1,293 @@
+:root {
+    --bg-color: #f5f7fa;
+    --container-bg: white;
+    --text-color: #2c3e50;
+    --input-bg: white;
+    --input-border: #e0e0e0;
+    --todo-bg: #f8f9fa;
+    --todo-hover: #e9ecef;
+    --button-bg: #3498db;
+    --button-hover: #2980b9;
+    --date-color: #666;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --container-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --input-bg: #3d3d3d;
+    --input-border: #4d4d4d;
+    --todo-bg: #3d3d3d;
+    --todo-hover: #4d4d4d;
+    --button-bg: #2980b9;
+    --button-hover: #3498db;
+    --date-color: #aaaaaa;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, var(--bg-color) 0%, #c3cfe2 100%);
+    transition: background-color 0.3s ease;
+}
+
+.todo-container {
+    background: var(--container-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+                0 6px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    transform: perspective(1000px) rotateX(5deg);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.todo-container:hover {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.js-name-input,
+.js-date-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.js-name-input:focus,
+.js-date-input:focus {
+    outline: none;
+    border-color: var(--button-bg);
+}
+
+button {
+    padding: 12px 24px;
+    background: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.js-todo-list {
+    margin-top: 20px;
+}
+
+.js-todo-list p {
+    background: #f8f9fa;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.js-todo-list p:hover {
+    transform: translateX(5px);
+    background: #e9ecef;
+}
+
+.todo-grid,
+.todo-input-grid
+{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10px;
+    row-gap: 10px;
+    align-items: center;
+}
+.todo-input-grid{
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+.name-input,
+.due-date-input
+{
+    font-size: 15px;
+    padding: 6px;
+}
+.add-todo-button{
+    background-color: rgb(0, 0, 0);
+    border: none;
+    font-size: 15px;
+    color: aliceblue;
+    cursor: pointer;
+}
+.delete-todo-button {
+    background-color: #ff4444;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete-todo-button:hover {
+    background-color: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-todo-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-todo-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.delete-todo-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Add animation for todo items when they're deleted */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: var(--todo-bg);
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.todo-item:hover {
+    transform: translateX(5px);
+    background: var(--todo-hover);
+}
+
+.todo-content {
+    flex: 1;
+}
+
+.todo-item.deleting {
+    animation: slideOut 0.3s ease forwards;
+}
+
+.todo-date {
+    color: var(--date-color);
+    font-size: 14px;
+    margin-top: 5px;
+}

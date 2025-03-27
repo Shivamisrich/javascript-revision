@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="practice.css">
 </head>
 <body>
-    <p>To-do-list</p>
-    <input class="js-name-input" placeholder="Add a new task" >
-    <button onclick="
-    addTodo();
-    ">Add </button>
-    <div class="js-todo-list">
-
+    <div class="todo-container">
+        <div class="header">
+            <h1>Todo List</h1>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div class="input-section">
+            <input placeholder="Add a new task" class="js-name-input">
+            <input type="date" class="js-date-input">
+            <button onclick="addTodo()">Add</button>
+        </div>
+        <div class="js-todo-list"></div>
     </div>
     <script src="practice.js"></script>
 </body>
