@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+   
+   
+   <script> 
+   /*
+   //calling the function.
+   function greeting() {
+    console.log('hello');
+   } 
+   greeting(); 
+
+   //functions are values so we can save a fxn inside a variable
+
+ const function1 = function greeting() {
+    console.log('hello');
+   }
+   console.log(function1);
+   console.log(typeof function1); //typeof function 1 is also a function
+   
+ ///1.   // Function with no name are called anonymos function
+   //when there is an another way to call a function we do not need function name
+//    const function1 = function () { name is remove dwhich was greeting
+//     console.log('hello');
+//    }
+
+
+
+//2. //   HOISTING 
+//      we can call this function before we have created it
+//      hoisting doesnot work when we create a fxn and save it inside A variable.
+
+
+//3.  fxn can  be saved inside an object
+
+                const object = {
+                    num: 2,
+                    fun: function(){   //this is called a method a function saved inside an object
+                    console.log('hello3');
+                                }
+                                };
+                                object.fun();
+                                console.log(typeof object.fun );
+
+            function display(param) {
+                console.log(param);
+            }
+            display(2);
+
+            function run(param) {
+                param(); //as param also contains a function typeof param is also a function
+            }
+            run(function() {
+                console.log('hello4');
+            });
+            */
+
+
+            //first parameter is a function that we want to run in the future 2. paramter to how many second to wait before running this function
+            setTimeout(function (params) {
+                console.log('timeout');
+            },3000);
+                </script> 
+</body>
+</html>
