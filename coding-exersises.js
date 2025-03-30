@@ -134,6 +134,19 @@ while (i <=10) {
 // }
 // console.log(countWords(['apple','apple','grape','apple']));
 
+const array = ['ankit','harsh','serch','shivam' ];
+let ahaha = -1;
+
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    if (element==='search') {
+        ahaha=2;
+        break;
+    }
+    
+}
+console.log(ahaha);
+
 
 
 
