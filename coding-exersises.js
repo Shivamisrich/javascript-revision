@@ -186,9 +186,28 @@ while (i <=10) {
 //         }
         
 //     }
-//     return newArray
+//     return newArray.reverse();
 //  }
-//  console.log(removeEggs(['eegs','hams','apple','eggs']));
+//  console.log(removeEggs(['eggs','hams','apple','eggs','eggs']));
+
+ function removeEggs(foods) {
+    foods.reverse(); // Reverse the array to bring last "egg" first
+    let count = 0;
+    let newArray = [];
+
+    for (let i = 0; i < foods.length; i++) {
+        if (foods[i] === 'egg' && count < 2) {
+            count++; // Skip first two "egg"
+            continue;
+        }
+        newArray.push(foods[i]); // Keep other elements
+    }
+
+    return newArray.reverse(); // Reverse back to original order
+}
+
+console.log(removeEggs(['egg', 'apple', 'egg', 'egg', 'ham']));
+// Output: ['egg', 'apple', 'ham']
 
     
 
