@@ -146,6 +146,50 @@ while (i <=10) {
     
 // }
 // console.log(index);
+// const array = ['green', 'red', 'blue', 'red'];
+
+// function findIndex(array, word) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] === word) {
+//             return i;  // ✅ Directly return the first match
+//         }
+//     }
+//     return -1;  // ✅ Return -1 if not found
+// }
+
+// console.log(findIndex(array, 'red'));  // ✅ Output: 1
+// console.log(findIndex(array, 'blue')); // ✅ Output: 2
+// console.log(findIndex(array, 'yellow')); // ✅ Output: -1
+// function removeEggs(foods) {
+//     let newArray = [];
+//     for (let i = 0; i < foods.length; i++) {
+//         const element = foods[i];
+//         if (element==='eggs') {
+//             continue;
+//         }
+//         else{
+//             newArray.push(element);
+//         }
+        
+//     }
+//     return newArray;
+// }
+//  console.log(removeEggs(['eegs','hams','apple','eggs']));
+
+//  function removeEggs(foods) {
+//     let newArray = [];
+//     for (let i = 0; i < foods.length; i++) {
+//         const element = foods[i];
+//         if (element!='eggs') {
+//             newArray.push(element);
+            
+//         }
+        
+//     }
+//     return newArray
+//  }
+//  console.log(removeEggs(['eegs','hams','apple','eggs']));
+
     
 
 
