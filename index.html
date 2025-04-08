@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Typing Speed Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+  <div class="max-w-xl w-full bg-gray-800 rounded-2xl shadow-xl p-6">
+    <h1 class="text-3xl font-bold text-center mb-6">⏱️ Typing Speed Test</h1>
+    <div id="sentence" class="text-xl text-yellow-300 mb-4 text-center font-mono"></div>
+    <input
+      type="text"
+      id="inputBox"
+      placeholder="Start typing here..."
+      class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+    />
+    <div id="result" class="mt-6 text-lg text-center"></div>
+    <button
+      onclick="startTest()"
+      class="mt-6 bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-2 rounded-lg font-semibold transition-all duration-300"
+    >
+      🔄 New Sentence
+    </button>
+  </div>
+
+  <script>
+    const sentences = [
+      "The quick brown fox jumps over the lazy dog",
+      "Typing fast is a great skill",
+      "JavaScript is a powerful language",
+      "Practice makes a man perfect",
+      "I love solving problems with code"
+    ];
+
+    let currentSentence = "";
+    let startTime = null;
+
+    const sentenceDiv = document.getElementById("sentence");
+    const inputBox = document.getElementById("inputBox");
+    const resultDiv = document.getElementById("result");
+
+    function startTest() {
+      const randomIndex = Math.floor(Math.random() * sentences.length);
+      currentSentence = sentences[randomIndex];
+      sentenceDiv.innerText = currentSentence;
+      inputBox.value = "";
+      resultDiv.innerText = "";
+      startTime = null;
+      inputBox.focus();
+    }
+
+    inputBox.addEventListener("input", () => {
+      if (!startTime) startTime = new Date();
+
+      if (inputBox.value === currentSentence) {
+        const endTime = new Date();
+        const timeTaken = (endTime - startTime) / 1000;
+        const wordCount = currentSentence.split(" ").length;
+        const wpm = Math.round((wordCount / timeTaken) * 60);
+        resultDiv.innerText = `✅ Completed in ${timeTaken.toFixed(2)} seconds\n⚡ Speed: ${wpm} WPM`;
+      }
+    });
+
+    startTest(); // Auto start when page loads
+  </script>
+</body>
+</html>
