@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fix Example</title>
+</head>
+<body>
+  <button onclick="usethis()" class="js-button">Start</button>
+  <p class="js-paragraph"></p>
+
+  <script>
+   
+  // Timer ID yahan store hoga
+  let timeoutId = null;
+
+  function usethis() {
+    const paragraph = document.querySelector('.js-paragraph');
+
+    // Step 1: Message dikhado
+    paragraph.innerHTML = 'Added';
+
+    // Step 2: Purana timeout cancel karo (agar koi hai)
+    if (timeoutId !== null) {
+      clearTimeout(timeoutId);
+    }
+
+    // Step 3: Naya timeout set karo jo 2 sec baad message hataye
+    timeoutId = setTimeout(() => {
+      paragraph.innerHTML = '';
+    }, 2000);
+  }
+</script>
+    
+  </script>
+</body>
+</html>
