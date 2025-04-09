@@ -4,14 +4,23 @@
     <title>App</title>
   </head>
   <body>
+    <button onclick="
+      amount++;
+      ">Add</button>
+    <button onclick="
+    amount--;
+    ">Remove</button>
+
     <script>
+      let amount = 2;
       setInterval(function() {
         if (document.title === 'App') {
-          document.title = '(2) New messages';
+          document.title = `(${amount}) New messages`;
         } else {
           document.title = 'App';
         }
       }, 1000);
+      
     </script>
   </body>
 </html>
